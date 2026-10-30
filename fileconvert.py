@@ -182,26 +182,27 @@ if __name__ == "__main__":
         
     mode = sys.argv[1]
     
-    if mode == "png":
-        convert_to_png()
-    elif mode == "jpg":
-        convert_to_jpeg()
-    elif mode == "webp":
-        convert_to_webp()
-    elif mode == "pdf":
-        convert_to_pdf()
-    elif mode == "gif":
-        convert_to_gif()
-    elif mode == "bmp":
-        convert_to_bitmap()
-    elif mode == "tiff":
-        convert_to_tiff()
-    elif mode == "thumbnail":
-        convert_to_thumbnail()
-    elif mode == "jumble":
-        jumble()
-    elif mode == "blur":
-        blur()
-    else:
-        print_help()
-        sys.exit(1)
+    match mode:
+        case "png":
+            convert_to_png()
+        case "jpg":
+            convert_to_jpeg()
+        case "webp":
+            convert_to_webp()
+        case "pdf":
+            convert_to_pdf()
+        case "gif":
+            convert_to_gif()
+        case "bmp":
+            convert_to_bitmap()
+        case "tiff":
+            convert_to_tiff()
+        case "thumbnail":
+            convert_to_thumbnail()
+        case "jumble":
+            jumble()
+        case "blur":
+            blur()
+        case _:
+            print_help()
+            sys.exit(1)
